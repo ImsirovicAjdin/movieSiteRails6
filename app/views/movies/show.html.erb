@@ -1,0 +1,8 @@
+<h1><%= @movie.title%></h1>
+<p style="width: 400px; height: auto">
+    <%= image_tag(@movie.img) if @movie.img.attached? %>
+</p>
+<p>Find me in app/views/movies/show.html.erb</p>
+<% if current_user.is_admin %>
+    Bilo sta
+<% end %>

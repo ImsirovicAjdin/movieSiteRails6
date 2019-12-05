@@ -1,0 +1,6 @@
+<%= form_for :movie, url: movie_path, method: :patch do |f| %>
+  Title: <%= f.text_field :title %><br>
+  Description : <%= f.text_field :description %><br>
+  Image: <%= f.file_field :img %><br>
+  <%= f.submit %>
+<% end %>

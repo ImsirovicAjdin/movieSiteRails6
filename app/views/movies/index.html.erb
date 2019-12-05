@@ -1,0 +1,31 @@
+<!-- 
+<%= button_to "New", new_movie_path, method: :get %>
+-->
+<div class="container">
+    <div class="columns" style="flex-wrap: wrap">
+        
+            <%  @movies.each do |movie| %>
+                <%= link_to movie_path(movie), :class => "" do %>
+                <div class="column">
+                    <div class="card" style="width: 350px">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <%= image_tag(movie.img) if movie.img.attached? %>
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h3>
+                                <%= movie.title %>
+                            </h3>
+
+                            <div class="content">
+                                <%= movie.description %> 
+                            </div>
+                        </div>
+                    </div>
+                </div>                    
+                <% end %>
+            <% end %>
+
+    </div>
+</div>

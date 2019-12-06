@@ -2,6 +2,22 @@
 <p style="width: 400px; height: auto">
     <%= image_tag(@movie.img) if @movie.img.attached? %>
 </p>
+<p>
+    <% if @movie.rate.to_i.nonzero? %>
+        <span>
+            <%= @movie.rate.to_i.times do %>
+                <%# &#9733; %>
+                <i class="fa fa-star"></i>
+            <% end %>
+        </span>
+        <span>
+            <%= @movie.blank_stars.times do %>
+                <%# &#9734; %>
+                <i class="fa fa-star-o"></i>
+            <% end %>
+        </span>
+    <% end %>
+</p>
 <p>Find me in app/views/movies/show.html.erb</p>
 <% if current_user.is_admin %>
     Bilo sta
